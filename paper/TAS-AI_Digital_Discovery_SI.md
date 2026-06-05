@@ -260,8 +260,29 @@ The lesson is narrow but useful. The top-two falsification rule is a serious bas
 
 ### S5.4 Prior and background sensitivity in the closed-loop discrimination stack
 
-We ran a coarse sensitivity check on the pilot closed-loop discrimination stack (Figure 10 of the main text) at sampled checkpoints of 40, 60, and 90 measurements. Three variants were compared: the default chemically motivated prior weights, equal model priors, and the default priors with the gapless-background lock disabled.
+We ran a coarse sensitivity check on the pilot closed-loop discrimination stack (Figure 10 of the main text) at sampled checkpoints of 40, 60, and 90 measurements. This pass is intentionally not the same calculation as the final Table 3 summary in the main text: here we recompute rankings at sparse checkpoints using a fast local discrimination pass (`use_dream=False`, `use_bumps=False`) in order to test sensitivity to priors and the background-lock switch, whereas Table 3 reports the final end-of-run fit and posterior summary under the full pilot-analysis pipeline. Three variants were compared: the default chemically motivated prior weights, equal model priors, and the default priors with the gapless-background lock disabled.
 
-At all three sampled checkpoints, the default setting ranks the full model $M_4$ first, but only moderately over $M_2$ (posterior ratio about 2.58 rather than decisive support). With **equal priors**, the ranking flips and $M_2$ becomes the leader over $M_4$ at all three checkpoints (ratio about 2.72). Disabling the gapless-background lock, by contrast, does not change the ranking at these checkpoints relative to the default setting.
+At all three sampled checkpoints, the default setting ranks the full model $M_4$ first, but only moderately over $M_2$ (posterior ratio about 2.58 rather than decisive support). With **equal priors**, the ranking flips and $M_2$ becomes the leader over $M_4$ at all three checkpoints (ratio about 2.72). Disabling the gapless-background lock, by contrast, does not change the ranking at these checkpoints relative to the default setting. These checkpoint ratios should therefore be interpreted as coarse sensitivity diagnostics rather than as the final posterior values reported in Table 3.
 
 The practical implication is that the prior weights matter substantially in this integrated closed-loop regime, whereas the background-freezing switch is not what controls the final ranking in this coarse sensitivity pass. This does not invalidate the rationale for freezing nuisance backgrounds; it indicates that the posterior evolution in Figure 10 should not be interpreted as strongly prior-insensitive.
+
+## Supplementary Note S6. NiPS3 structure-to-discrimination example
+
+To make the upstream structure-to-hypothesis capability concrete, we ran an additional real-material demonstration on NiPS3 using the reported crystal structure from Materials Project entry `mp-676040`. The controller first constructs a candidate Hamiltonian family from structure using exchange-path analysis and Goodenough-Kanamori-Anderson heuristics, then performs model discrimination in a single HK0 scattering plane using a PySpinW-backed digital twin. This demonstration is not part of the main square-lattice comparison suite in the paper; its role is to show that the implemented structure-to-candidate-to-discrimination workflow operates on a real material rather than only on hand-specified toy models.
+
+The tested family was the standard NiPS3 sequence `J1`, `J1+J3`, `J1+J2+J3`, and `J1+J2+J3+D`. One-plane HK0 data reject the underspecified `J1`-only and `J1+J3` models and support the `J1-J2-J3(+D)` family. In the local benchmark summarized in Table S7, the highest-posterior model is `J1+J2+J3`, while the full `J1+J2+J3+D` model remains competitive. The corresponding posterior evolution is shown in Figure S14.
+
+![NiPS3 HK0 posterior evolution for the one-plane structure-to-discrimination benchmark. The underspecified M1 and M2 models are rapidly eliminated, while the posterior mass concentrates on the J1-J2-J3 and J1-J2-J3+D families.](figures/nips3_hk0_posterior_evolution.png){ width=85% }
+
+*Table S7.* NiPS3 one-plane HK0 structure-to-discrimination benchmark summary.
+
+| **Item** | **Value** |
+| --- | --- |
+| Structure source | Materials Project `mp-676040` |
+| Measurement geometry | Single HK0 scattering plane |
+| Candidate models | `M1: J1 only`; `M2: J1 + J3`; `M3: J1 + J2 + J3`; `M4: J1 + J2 + J3 + D` |
+| Measurements used | 6 |
+| Rejected models | `M1: J1 only`; `M2: J1 + J3` |
+| Highest-posterior model | `M3: J1 + J2 + J3` |
+| Final posteriors | `M1 = 0.0`; `M2 = 5.3e-15`; `M3 = 0.7603`; `M4 = 0.2397` |
+| Best-fit parameters | `J1 = -1.9`; `J2 = 0.1`; `J3 = 6.9` (for `M3`) |
