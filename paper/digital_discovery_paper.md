@@ -4,7 +4,7 @@ bibliography: references.bib
 csl: royal-society-of-chemistry-with-titles.csl
 ---
 
-**Authors:** William Ratcliff II,¹*  
+**Authors:** William Ratcliff II,¹* [ORCID 0000-0001-8956-3851](https://orcid.org/0000-0001-8956-3851)
 
 ¹NIST Center for Neutron Research, National Institute of Standards and Technology, Gaithersburg, MD 20899, USA  
 
