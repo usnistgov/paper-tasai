@@ -12,4 +12,4 @@ dependencies:
   - matplotlib=3.4.3
   - numba=0.60.0
   - pip:
-      - git+https://github.com/usnistgov/tasai@paper-snapshot-2026-03-27
+      - git+https://github.com/usnistgov/tasai@paper-revision-2026-06

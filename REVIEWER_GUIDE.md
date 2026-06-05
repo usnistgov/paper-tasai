@@ -125,7 +125,12 @@ README.
 
 The underlying reusable library code lives in:
 
-- [usnistgov/tasai](https://github.com/usnistgov/tasai)
+- [usnistgov/tasai](https://github.com/usnistgov/tasai), pinned for this revision at tag **`paper-revision-2026-06`**
+
+The pinned `environment.yml` in this bundle installs that exact snapshot
+(equivalent to `pip install git+https://github.com/usnistgov/tasai@paper-revision-2026-06`),
+so a reviewer following the install instructions reproduces the same library
+state used to generate the figures in this manuscript.
 
 The public paper bundle is:
 

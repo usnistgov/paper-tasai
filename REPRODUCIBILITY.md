@@ -37,6 +37,12 @@ This uses:
 - [paper/scripts/build_manuscript.sh](paper/scripts/build_manuscript.sh)
 - [environment.yml](environment.yml) for the pinned paper-facing Python stack
 
+The pinned environment installs the TAS-AI library from the **`paper-revision-2026-06`** tag of `usnistgov/tasai`, which is the snapshot of record for this revision round (manuscript DD-ART-04-2026-000232). Equivalently:
+
+```bash
+pip install git+https://github.com/usnistgov/tasai@paper-revision-2026-06
+```
+
 For the PySpinW-backed NiPS3 benchmark, the base environment is supplemented by
 a compatible local `pyspinw` source checkout exposed through `PYSPINW_PATH` (or
 otherwise added to `sys.path`), because that backend is consumed from source in
@@ -158,7 +164,7 @@ code when warnings are present.
 
 This repo does not duplicate the full TAS-AI library source. The public code repo is:
 
-- [usnistgov/tasai](https://github.com/usnistgov/tasai)
+- [usnistgov/tasai](https://github.com/usnistgov/tasai), pinned at tag **`paper-revision-2026-06`** for this revision round
 
 The public paper-bundle mirror is:
 
@@ -166,5 +172,5 @@ The public paper-bundle mirror is:
 
 The manuscript text points to those two public repositories directly:
 
-- `usnistgov/tasai` for the reusable library code
+- `usnistgov/tasai` (tag `paper-revision-2026-06`) for the reusable library code
 - `usnistgov/paper-tasai` for manuscript sources, paper-facing scripts, archived data, and provenance artifacts
