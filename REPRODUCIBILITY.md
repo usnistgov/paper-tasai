@@ -17,6 +17,8 @@ This paper-facing bundle is designed to let a reviewer inspect:
   - [paper/figures/](paper/figures/)
 - Paper-facing scripts:
   - [paper/scripts/](paper/scripts/)
+- Pinned environment:
+  - [environment.yml](environment.yml)
 - Archived data:
   - [paper/data/](paper/data/)
 
@@ -33,6 +35,12 @@ This uses:
 
 - [paper/Dockerfile.pandoc](paper/Dockerfile.pandoc)
 - [paper/scripts/build_manuscript.sh](paper/scripts/build_manuscript.sh)
+- [environment.yml](environment.yml) for the pinned paper-facing Python stack
+
+For the PySpinW-backed NiPS3 benchmark, the base environment is supplemented by
+a compatible local `pyspinw` source checkout exposed through `PYSPINW_PATH` (or
+otherwise added to `sys.path`), because that backend is consumed from source in
+the current workflow.
 
 ## Main Archived Data
 
@@ -46,6 +54,22 @@ The main paper tables and figure summaries are backed by:
 - [paper/data/final/time_aware_search_results_20260327.json](paper/data/final/time_aware_search_results_20260327.json)
 - [paper/data/final/overseer_loggpfix_20260327_final_summary.json](paper/data/final/overseer_loggpfix_20260327_final_summary.json)
 
+## NiPS3 Structure-to-Discrimination Example
+
+The added NiPS3 workflow example is backed by:
+
+- [simulations/data/nips3_mp676040.cif](simulations/data/nips3_mp676040.cif)
+- [simulations/nips3_hk0_pyspinw_benchmark.py](simulations/nips3_hk0_pyspinw_benchmark.py)
+- [simulations/nips3_gk_pipeline.py](simulations/nips3_gk_pipeline.py)
+- [run_logs/nips3_hk0_pyspinw_local.json](run_logs/nips3_hk0_pyspinw_local.json)
+- [run_logs/nips3_gk_pipeline_local.json](run_logs/nips3_gk_pipeline_local.json)
+- [paper/scripts/plot_nips3_posterior_evolution.py](paper/scripts/plot_nips3_posterior_evolution.py)
+- [paper/figures/nips3_hk0_posterior_evolution.png](paper/figures/nips3_hk0_posterior_evolution.png)
+
+The HK0 benchmark demonstrates structure-informed candidate generation from the
+NiPS3 crystal structure followed by one-plane model discrimination within the
+`J1`, `J1+J3`, `J1+J2+J3`, and `J1+J2+J3+D` family.
+
 ## Section 5 Ablation Archives
 
 The Section 5 discussion is backed by:
@@ -56,6 +80,8 @@ The Section 5 discussion is backed by:
   - [paper/data/ablation_runs/bilayer_fm_cleaned](paper/data/ablation_runs/bilayer_fm_cleaned)
 - multi-model trap archive:
   - [paper/data/ablation_runs/multimodel_trap](paper/data/ablation_runs/multimodel_trap)
+  - seeded initial-rank state used to construct the §S5.3 trap (required to reproduce the table from scratch):
+    [paper/data/multimodel_trap_state_20260403.json](paper/data/multimodel_trap_state_20260403.json)
 - five-seed ghost-optic rerun:
   - [paper/data/ablation_runs/ghost_optic_5seed_20260415c](paper/data/ablation_runs/ghost_optic_5seed_20260415c)
 - five-seed bilayer rerun:
@@ -81,7 +107,9 @@ The manuscript-specific closed-loop drivers live under this repo at
 - `toy_closed_loop_llm_overseer.py` — overseer-mode wrapper.
 - `exchange_path_analysis.py` — Goodenough–Kanamori exchange-path
   enumeration used for Figure 13.
-- `create_workflow_figure.py` — Figure 1 workflow diagram.
+- `simulations/create_workflow_figure.py` — Figure 1 workflow diagram.
+- `plot_nips3_posterior_evolution.py` — SI posterior-evolution figure for
+  the NiPS3 one-plane HK0 benchmark.
 
 The analytic spin-wave physics used by these drivers is upstreamed into
 the library so the closed-loop pilots can be rerun without copying
@@ -91,6 +119,31 @@ physics code out of this repo:
   square lattice (§3.6 / Fig 10).
 - `tasai.physics.SquareFMBilayer` — square-lattice bilayer ferromagnet
   with acoustic + optic branches and L-dependent weights (§5.3.2).
+
+## Mailbox / Overseer Watcher Tools
+
+A sanitized reference implementation of the mailbox-backed LLM audit
+path used in the §5 overseer experiments lives under
+[scripts/](scripts/). Referee 3 specifically flagged these as missing
+in the original bundle; they are now included and described in
+[scripts/README_mailbox_tools.md](scripts/README_mailbox_tools.md).
+The three scripts cited in SI Note §7.2 are:
+
+- [scripts/llm_danse2_watcher.py](scripts/llm_danse2_watcher.py) — the
+  mailbox watcher that polls a mailbox endpoint, runs local CLI-backed
+  LLMs, and posts suggestions or overseer decisions back.
+- [scripts/llm_mailbox_client.py](scripts/llm_mailbox_client.py) —
+  minimal helper for checking mailbox status, posting prompts, and
+  retrieving suggestions.
+- [scripts/llm_audit_mailbox_runner.py](scripts/llm_audit_mailbox_runner.py) —
+  local watcher used for the audit-ablation batches.
+
+The supporting batch worker, campaign manager, foreground executor,
+and supervisor are included alongside for completeness; configuration
+notes (mailbox URL, token, CLI defaults including `gpt-5.2-codex` for
+Codex runs) are in `README_mailbox_tools.md`. The scientific results
+do not depend on this exact transport layer — equivalent direct-API
+or alternative service-mediated implementations are possible.
 
 ## Citation Audit
 
