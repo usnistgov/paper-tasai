@@ -1,0 +1,358 @@
+{
+  "trial": 93,
+  "true_model": "M4: Full model",
+  "initial_measurement_count": 8,
+  "seed_points": [
+    {
+      "h": 0.75,
+      "k": 0.75,
+      "E": 25.0,
+      "count_time": 60.0
+    },
+    {
+      "h": 0.71,
+      "k": 0.71,
+      "E": 6.1,
+      "count_time": 60.0
+    },
+    {
+      "h": 0.71,
+      "k": 0.71,
+      "E": 4.1,
+      "count_time": 60.0
+    },
+    {
+      "h": 0.0,
+      "k": 0.0,
+      "E": 0.5,
+      "count_time": 60.0
+    },
+    {
+      "h": 0.14,
+      "k": 0.14,
+      "E": 4.7,
+      "count_time": 60.0
+    },
+    {
+      "h": 0.7999999999999999,
+      "k": 0.7999999999999999,
+      "E": 11.0,
+      "count_time": 60.0
+    },
+    {
+      "h": 0.9999999999999999,
+      "k": 0.9999999999999999,
+      "E": 11.0,
+      "count_time": 60.0
+    },
+    {
+      "h": 0.9999999999999999,
+      "k": 0.9999999999999999,
+      "E": 1.5,
+      "count_time": 60.0
+    }
+  ],
+  "measurements": [
+    {
+      "h": 0.75,
+      "k": 0.75,
+      "E": 25.0,
+      "intensity": 0.5666666666666667,
+      "uncertainty": 0.09921917377424812,
+      "counts": 34,
+      "coverage": false,
+      "symmetry": false,
+      "human_hint": false,
+      "llm_hint": false,
+      "llm_reason": "",
+      "mode": null,
+      "llm_batch_idx": null,
+      "llm_provider": null,
+      "llm_decision_reason": "",
+      "loggp_hint": false,
+      "count_time": 60.0,
+      "dwell": false,
+      "audit_policy": null,
+      "audit_injected": false,
+      "audit_probe_family": null,
+      "is_falsification_probe": false,
+      "expected_contrast": 0.0,
+      "silent_data_active": false
+    },
+    {
+      "h": 0.71,
+      "k": 0.71,
+      "E": 6.1,
+      "intensity": 0.4666666666666667,
+      "uncertainty": 0.09043106644167025,
+      "counts": 28,
+      "coverage": false,
+      "symmetry": false,
+      "human_hint": false,
+      "llm_hint": false,
+      "llm_reason": "",
+      "mode": null,
+      "llm_batch_idx": null,
+      "llm_provider": null,
+      "llm_decision_reason": "",
+      "loggp_hint": false,
+      "count_time": 60.0,
+      "dwell": false,
+      "audit_policy": null,
+      "audit_injected": false,
+      "audit_probe_family": null,
+      "is_falsification_probe": false,
+      "expected_contrast": 0.0,
+      "silent_data_active": false
+    },
+    {
+      "h": 0.71,
+      "k": 0.71,
+      "E": 4.1,
+      "intensity": 0.55,
+      "uncertainty": 0.09780933834080807,
+      "counts": 33,
+      "coverage": false,
+      "symmetry": false,
+      "human_hint": false,
+      "llm_hint": false,
+      "llm_reason": "",
+      "mode": null,
+      "llm_batch_idx": null,
+      "llm_provider": null,
+      "llm_decision_reason": "",
+      "loggp_hint": false,
+      "count_time": 60.0,
+      "dwell": false,
+      "audit_policy": null,
+      "audit_injected": false,
+      "audit_probe_family": null,
+      "is_falsification_probe": false,
+      "expected_contrast": 0.0,
+      "silent_data_active": false
+    },
+    {
+      "h": 0.0,
+      "k": 0.0,
+      "E": 0.5,
+      "intensity": 0.3333333333333333,
+      "uncertainty": 0.07717224601860151,
+      "counts": 20,
+      "coverage": false,
+      "symmetry": false,
+      "human_hint": false,
+      "llm_hint": false,
+      "llm_reason": "",
+      "mode": null,
+      "llm_batch_idx": null,
+      "llm_provider": null,
+      "llm_decision_reason": "",
+      "loggp_hint": false,
+      "count_time": 60.0,
+      "dwell": false,
+      "audit_policy": null,
+      "audit_injected": false,
+      "audit_probe_family": null,
+      "is_falsification_probe": false,
+      "expected_contrast": 0.0,
+      "silent_data_active": false
+    },
+    {
+      "h": 0.14,
+      "k": 0.14,
+      "E": 4.7,
+      "intensity": 0.4,
+      "uncertainty": 0.08406346808612326,
+      "counts": 24,
+      "coverage": false,
+      "symmetry": false,
+      "human_hint": false,
+      "llm_hint": false,
+      "llm_reason": "",
+      "mode": null,
+      "llm_batch_idx": null,
+      "llm_provider": null,
+      "llm_decision_reason": "",
+      "loggp_hint": false,
+      "count_time": 60.0,
+      "dwell": false,
+      "audit_policy": null,
+      "audit_injected": false,
+      "audit_probe_family": null,
+      "is_falsification_probe": false,
+      "expected_contrast": 0.0,
+      "silent_data_active": false
+    },
+    {
+      "h": 0.7999999999999999,
+      "k": 0.7999999999999999,
+      "E": 11.0,
+      "intensity": 0.31666666666666665,
+      "uncertainty": 0.07535103036971544,
+      "counts": 19,
+      "coverage": false,
+      "symmetry": false,
+      "human_hint": false,
+      "llm_hint": false,
+      "llm_reason": "",
+      "mode": null,
+      "llm_batch_idx": null,
+      "llm_provider": null,
+      "llm_decision_reason": "",
+      "loggp_hint": false,
+      "count_time": 60.0,
+      "dwell": false,
+      "audit_policy": null,
+      "audit_injected": false,
+      "audit_probe_family": null,
+      "is_falsification_probe": false,
+      "expected_contrast": 0.0,
+      "silent_data_active": false
+    },
+    {
+      "h": 0.9999999999999999,
+      "k": 0.9999999999999999,
+      "E": 11.0,
+      "intensity": 0.5333333333333333,
+      "uncertainty": 0.09637888196533974,
+      "counts": 32,
+      "coverage": false,
+      "symmetry": false,
+      "human_hint": false,
+      "llm_hint": false,
+      "llm_reason": "",
+      "mode": null,
+      "llm_batch_idx": null,
+      "llm_provider": null,
+      "llm_decision_reason": "",
+      "loggp_hint": false,
+      "count_time": 60.0,
+      "dwell": false,
+      "audit_policy": null,
+      "audit_injected": false,
+      "audit_probe_family": null,
+      "is_falsification_probe": false,
+      "expected_contrast": 0.0,
+      "silent_data_active": false
+    },
+    {
+      "h": 0.9999999999999999,
+      "k": 0.9999999999999999,
+      "E": 1.5,
+      "intensity": 10.066666666666666,
+      "uncertainty": 0.5089025228644262,
+      "counts": 604,
+      "coverage": false,
+      "symmetry": false,
+      "human_hint": false,
+      "llm_hint": false,
+      "llm_reason": "",
+      "mode": null,
+      "llm_batch_idx": null,
+      "llm_provider": null,
+      "llm_decision_reason": "",
+      "loggp_hint": false,
+      "count_time": 60.0,
+      "dwell": false,
+      "audit_policy": null,
+      "audit_injected": false,
+      "audit_probe_family": null,
+      "is_falsification_probe": false,
+      "expected_contrast": 0.0,
+      "silent_data_active": false
+    }
+  ],
+  "initial_rank": [
+    [
+      "M4: Full model",
+      0.7202909827960339
+    ],
+    [
+      "M2: NN + anisotropy",
+      0.279709017203966
+    ],
+    [
+      "M1: NN Heisenberg",
+      0.0
+    ],
+    [
+      "M3: J1-J2 no gap",
+      0.0
+    ]
+  ],
+  "top_two_pick": {
+    "h": 1.0321,
+    "k": 1.0321,
+    "E": 3.1638,
+    "score": 5.104572118829021,
+    "z": 24.664782020969948,
+    "move_time": 3.8319,
+    "mu_best": 0.43173269529450997,
+    "mu_second": 24.712700165938653,
+    "sigma_E": 0.10810603207142473,
+    "best_model": "M4: Full model",
+    "second_model": "M2: NN + anisotropy",
+    "probe_family": "band_edge",
+    "is_falsification_probe": false,
+    "expected_contrast": 24.280967470644143,
+    "id": "D00"
+  },
+  "all_model_pick": {
+    "h": 0.9107,
+    "k": 0.9107,
+    "E": 5.7197,
+    "score": 4.7520437104373405,
+    "z": 29.034274264215586,
+    "move_time": 5.10985,
+    "mu_best": 62.215437972219384,
+    "mu_second": 0.4317295615081748,
+    "sigma_E": 0.10572516513024072,
+    "best_model": "M4: Full model",
+    "second_model": "M2: NN + anisotropy",
+    "probe_family": "band_edge",
+    "is_falsification_probe": false,
+    "expected_contrast": 61.783708410711206,
+    "id": "D00"
+  },
+  "after_top_two_rank": [
+    [
+      "M2: NN + anisotropy",
+      0.5129650289944007
+    ],
+    [
+      "M4: Full model",
+      0.48703497100559934
+    ],
+    [
+      "M1: NN Heisenberg",
+      0.0
+    ],
+    [
+      "M3: J1-J2 no gap",
+      0.0
+    ]
+  ],
+  "after_all_model_rank": [
+    [
+      "M4: Full model",
+      1.0
+    ],
+    [
+      "M2: NN + anisotropy",
+      7.32153266509295e-184
+    ],
+    [
+      "M1: NN Heisenberg",
+      0.0
+    ],
+    [
+      "M3: J1-J2 no gap",
+      0.0
+    ]
+  ],
+  "margin_top_two": -0.025930057988801325,
+  "margin_all_model": 1.0,
+  "margin_gain_diff": 1.0259300579888013,
+  "top_two_third_model": "M1: NN Heisenberg",
+  "top_two_blindness_score": 37.50274094006706
+}
