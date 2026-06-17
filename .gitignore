@@ -1,3 +1,6 @@
 .DS_Store
 __pycache__/
 *.pyc
+
+# Zenodo deposit tarball for the accepted version (do not track)
+/paper-tasai-accepted-digital-discovery.tar.gz
