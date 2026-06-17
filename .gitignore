@@ -4,3 +4,7 @@ __pycache__/
 
 # Zenodo deposit tarball for the accepted version (do not track)
 /paper-tasai-accepted-digital-discovery.tar.gz
+
+# Rendered manuscript outputs — rebuild via paper/scripts/build_manuscript.sh
+paper/TAS-AI_Digital_Discovery*.docx
+paper/TAS-AI_Digital_Discovery*.pdf
